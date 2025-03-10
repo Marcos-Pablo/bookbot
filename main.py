@@ -1,7 +1,12 @@
 from collections import defaultdict
+import sys
 
 def main():
-    path_to_file = "books/frankstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    path_to_file = sys.argv[1]
 
     with open(path_to_file) as file:
         file_contents = file.read()
